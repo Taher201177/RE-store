@@ -1,1 +1,282 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title> متجر RE store </title>
+
+  <!-- تحميل خط Tajawal من Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      font-family: 'Tajawal', sans-serif;
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #2c2f33, #23272a);
+      color: white;
+      direction: rtl;
+    }
+
+    header {
+      background-color: #7289da;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 30px;
+      text-align: center;
+    }
+
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    .product {
+      background-color: #99aab5;
+      color: black;
+      border-radius: 15px;
+      width: 250px;
+      padding: 15px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+      transition: transform 0.3s ease;
+    }
+
+    .product:hover {
+      transform: scale(1.05);
+    }
+
+    .product img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .product h3 {
+      margin: 10px 0 5px;
+    }
+
+    footer {
+      background-color: #23272a;
+      color: #ccc;
+      text-align: center;
+      padding: 15px;
+    }
+
+    a.button {
+      background-color: #7289da;
+      color: white;
+      padding: 8px 15px;
+      border-radius: 8px;
+      display: inline-block;
+      margin-top: 10px;
+      text-decoration: none;
+    }
+
+    a.button:hover {
+      background-color: #5b6eae;
+    }
+  </style>
+  <audio id="hover-sound" src="https://cdn.pixabay.com/audio/2022/03/15/audio_79b1d3179b.mp3"></audio>
+
+</head>
+
+<body>
+
+  <header>
+    <h1>🛒متجر RE store </h1>
+    <nav>
+      <a href="#home">الرئيسية</a>
+      <a href="#products">المنتجات</a>
+      <a href="#contact">تواصل معنا</a>
+    </nav>
+  </header>
+
+  <section id="home">
+    <h2> مرحبا بك في متجر Re store !</h2>
+    <p>نوفر خدمات احترافية لسيرفرك، مثل الرتب، البوتات، النيترو والمزيد.</p>
+  </section>
+  <section id="home">
+  <!-- إعلان التحديث الجديد -->
+  <div style="background-color: #ffcc00; color: black; padding: 15px; border-radius: 10px; margin-top: 20px; font-weight: bold;">
+    📢 التحديث 1.2 - انتظروا التحديثات القادمة!
+  </div>
+</section>
+
+
+  <section id="products">
+    <h2>منتجات مميزة</h2>
+    <div class="products">
+      <div class="product">
+        <img src="https://raw.githubusercontent.com/Taher201177/-/main/images.jpg" alt="منتج 1">
+        <h3>باكج كامل لسيرفرك</h3>
+        <p>تصميم كامل + بوت + حماية</p>
+        <p><strong>20$</strong></p>
+        <a class="button" href="#">شراء الآن</a>
+      </div>
+
+      <div class="product">
+        <img src="https://raw.githubusercontent.com/Taher201177/-/main/images.jpg" alt="منتج 2">
+        <h3>رتب مميزة</h3>
+        <p>تصميم رتب وتنسيقها بسيرفرك</p>
+        <p><strong>3$</strong></p>
+        <a class="button" href="#">شراء الآن</a>
+      </div>
+
+      <div class="product">
+        <img src="https://raw.githubusercontent.com/Taher201177/-/main/images.jpg" alt="منتج 3">
+        <h3>بروفايل احترافي</h3>
+        <p>تصميم هوية بصرية كاملة</p>
+        <p><strong>7$</strong></p>
+        <a class="button" href="#">شراء الآن</a>
+      </div>
+
+      <div class="product">
+        <img src="https://raw.githubusercontent.com/Taher201177/-/main/images.jpg" alt="منتج 4">
+        <h3>خدمات أخرى</h3>
+        <p>اطلب أي خدمة مخصصة!</p>
+        <p><strong>سعر حسب الطلب</strong></p>
+        <a class="button" href="#">طلب خاص</a>
+      </div>
+    </div>
+
+    <h2>الأكثر شراء</h2>
+    <div class="products">
+      <div class="product">
+        <img src="https://raw.githubusercontent.com/Taher201177/-/main/images.jpg" alt="تصميم بانر">
+        <h3>تصميم بانر</h3>
+        <p>بانر احترافي لحسابك أو سيرفرك</p>
+        <p><strong>6$</strong></p>
+        <a class="button" href="#">شراء الآن</a>
+      </div>
+
+      <div class="product">
+        <img src="https://raw.githubusercontent.com/Taher201177/-/main/images.jpg" alt="دعم فني شهري">
+        <h3>دعم فني شهري</h3>
+        <p>متابعة وصيانة لسيرفرك طوال الشهر</p>
+        <p><strong>15$</strong></p>
+        <a class="button" href="#">شراء الآن</a>
+      </div>
+    </div>
+
+    <h2>منتجاتنا</h2>
+    <div class="products">
+      <div class="product">
+        <img src="https://raw.githubusercontent.com/Taher201177/-/main/images.jpg" alt="صنع بوت">
+        <h3>صنع بوت</h3>
+        <p>احصل على بوت تتحكم فيه داخل السيرفر.</p>
+        <p><strong>5$</strong></p>
+        <a class="button" href="#">شراء الآن</a>
+      </div>
+
+      <div class="product">
+        <img src="https://raw.githubusercontent.com/Taher201177/-/main/images.jpg" alt="تصميم لوجو">
+        <h3>تصميم لوجو</h3>
+        <p>احصل على لوجو فخم من اختيارك.</p>
+        <p><strong>5$</strong></p>
+        <a class="button" href="#">شراء الآن</a>
+      </div>
+
+      <div class="product">
+        <img src="https://raw.githubusercontent.com/Taher201177/-/main/images.jpg" alt="نسخ سيرفرات">
+        <h3>نسخ سيرفرات</h3>
+        <p>أي سيرفر تريده ننسخه من اختيارك.</p>
+        <p><strong>10$</strong></p>
+        <a class="button" href="#">شراء الآن</a>
+      </div>
+
+      <div class="product">
+        <img src="https://raw.githubusercontent.com/Taher201177/-/main/images.jpg" alt="عضوية نيترو">
+        <h3>عضوية نيترو</h3>
+        <p>احصل على نيترو شهري لحسابك.</p>
+        <p><strong>4.99$</strong></p>
+        <a class="button" href="#">شراء الآن</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>تواصل معنا</h2>
+    <p>للشراء أو الاستفسار:</p>
+    <p>🎮 ديسكورد: <strong>fnas gamer</strong></p>
+    <p>🔗 رابط السيرفر: <a href="https://discord.gg/C3zjFZp4yN" style="color:#7289da;">انضم الآن</a></p>
+  </section>
+
+  <!-- Discord Login Button -->
+<a href="https://discord.com/api/oauth2/authorize?
+  client_id=1378804549049126953
+  redirect_uri=YOUR_REDIRECT_URI&
+  response_type=token&
+  scope=identify email" style="background:#5865F2; color:white; padding:10px 15px; border-radius:5px; text-decoration:none;">
+  تسجيل الدخول عبر Discord
+</a>
+
+
+ <!-- Google Login Button -->
+<a href="https://accounts.google.com/o/oauth2/v2/auth?
+  client_id=YOUR_GOOGLE_CLIENT_ID&
+  redirect_uri=YOUR_REDIRECT_URI&
+  response_type=token&
+  scope=profile email" style="background:#4285F4; color:white; padding:10px 15px; border-radius:5px; text-decoration:none;">
+  تسجيل الدخول عبر Google
+</a>
+<section id="home">
+  <!-- إعلان التحديث بنمط نيون مع أيقونة متحركة وخلفية -->
+  <div class="neon-container">
+    <div class="neon-box">
+      ✨ التحديث 1.2 - انتظروا التحديثات القادمة!
+    </div>
+  </div>
+</section>
+
+<style>
+  .neon-container {
+    background: linear-gradient(135deg, #ffd900, #eeff00);
+    padding: 20px;
+    border-radius: 15px;
+    margin: 20px;
+    box-shadow: 0 0 25px rgba(255, 136, 0, 0.7);
+  }
+
+  .neon-box {
+    font-size: 22px;
+    color: #ffffff;
+    text-shadow: 0 0 5px #000000, 0 0 10px #7289da, 0 0 20px #7289da;
+    animation: moveText 3s ease-in-out infinite alternate;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  @keyframes moveText {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(10px); }
+  }
+</style>
+
+
+
+  <footer>
+    <p>© 2025 RE store - جميع الحقوق محفوظة</p>
+  </footer>
+
+</body>
+</html>
 

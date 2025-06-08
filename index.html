@@ -8,6 +8,36 @@
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
+    header {
+  background-color: #ff0000;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.header-logo {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.logo {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.header-content {
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
     * {
       font-family: 'Tajawal', sans-serif;
       box-sizing: border-box;
@@ -98,26 +128,26 @@
 </head>
 <body>
 
-  <header>
-    <h1>🛒متجر RE store </h1>
+<header>
+  <div class="header-logo">
+    <img src="LOGO.webp" alt="شعار RE" class="logo">
+  </div>
+  <div class="header-content">
+    <h1>🛒 متجر RE store</h1>
     <nav>
       <a href="#home">الرئيسية</a>
       <a href="#products">المنتجات</a>
       <a href="#contact">تواصل معنا</a>
     </nav>
-  </header>
+  </div>
+</header>
+
+
 
   <section id="home">
     <h2> مرحبا بك في متجر Re store !</h2>
     <p>نوفر خدمات احترافية لسيرفرك، مثل الرتب، البوتات، النيترو والمزيد.</p>
   </section>
-  <section id="home">
-  <!-- إعلان التحديث الجديد -->
-  <div style="background-color: #ffcc00; color: black; padding: 15px; border-radius: 10px; margin-top: 20px; font-weight: bold;">
-    📢 التحديث 1.1 - انتظروا التحديثات القادمة!
-  </div>
-</section>
-
 
   <section id="products">
     <h2>منتجات مميزة</h2>
@@ -217,24 +247,54 @@
     <p>🔗 رابط السيرفر: <a href="https://discord.gg/C3zjFZp4yN" style="color:#7289da;">انضم الآن</a></p>
   </section>
 
-  <!-- Discord Login Button -->
-<a href="https://discord.com/api/oauth2/authorize?
-  client_id=1378804549049126953
-  redirect_uri=YOUR_REDIRECT_URI&
-  response_type=token&
-  scope=identify email" style="background:#5865F2; color:white; padding:10px 15px; border-radius:5px; text-decoration:none;">
-  تسجيل الدخول عبر Discord
-</a>
+<!-- أضف هذا داخل <body> أسفل قسم الاتصال أو حيثما ترغب في ظهور الزر -->
+<div style="text-align: center; margin: 30px;">
+  <button id="discord-login" style="background:#5865F2; color:white; padding:10px 20px; border:none; border-radius:8px; font-size:16px; cursor:pointer;">
+    تسجيل الدخول عبر Discord
+  </button>
+  <div id="login-message" style="margin-top: 10px; display:none;">جاري تسجيل الدخول...</div>
+  <div id="user-info" style="margin-top: 20px; display:none;">
+    <img id="user-avatar" src="" alt="Avatar" style="width:80px; border-radius:50%; border:2px solid white;">
+    <p id="user-name" style="margin:10px 0 0;"></p>
+  </div>
+</div>
 
+<!-- أضف هذا قبل </body> مباشرة -->
+<script>
+  const clientId = "1379714423857614958";
+  const redirectUri = "https://taher201177.github.io/RE-store/";
 
- <!-- Google Login Button -->
-<a href="https://accounts.google.com/o/oauth2/v2/auth?
-  client_id=YOUR_GOOGLE_CLIENT_ID&
-  redirect_uri=YOUR_REDIRECT_URI&
-  response_type=token&
-  scope=profile email" style="background:#4285F4; color:white; padding:10px 15px; border-radius:5px; text-decoration:none;">
-  تسجيل الدخول عبر Google
-</a>
+  document.getElementById("discord-login").addEventListener("click", () => {
+    const authUrl = `https://discord.com/api/oauth2/authorize?client_id=${clientId}&redirect_uri=${encodeURIComponent(redirectUri)}&response_type=token&scope=identify`;
+    window.location.href = authUrl;
+  });
+
+  window.onload = function () {
+    const hash = window.location.hash;
+    if (hash.includes("access_token")) {
+      const token = new URLSearchParams(hash.substring(1)).get("access_token");
+
+      document.getElementById("login-message").style.display = "block";
+
+      fetch("https://discord.com/api/users/@me", {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      })
+      .then(res => res.json())
+      .then(user => {
+        document.getElementById("user-avatar").src = `https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}.png`;
+        document.getElementById("user-name").textContent = `مرحباً ${user.username}#${user.discriminator}`;
+        document.getElementById("login-message").style.display = "none";
+        document.getElementById("user-info").style.display = "block";
+        document.getElementById("discord-login").textContent = "✅ تم تسجيل الدخول";
+      })
+      .catch(err => {
+        document.getElementById("login-message").textContent = "حدث خطأ أثناء تسجيل الدخول";
+      });
+    }
+  };
+</script>
 
 
   <footer>
